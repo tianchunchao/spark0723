@@ -21,6 +21,7 @@ object ActionsDemo {
     //3.reduce 归并:得到的结果数据顺序是不确定的,因为数据分布在不同的executor,但是本地模式模拟不出来,因为只有一台电脑
     val rdd2: RDD[String] = sc.makeRDD(List("a","b","c"))
     val rdd3: String = rdd2.reduce(_+_)
+    rdd3.foreach(println)
 
     //4.count,求集合元素个数
     val count: Long = rdd1.count()
